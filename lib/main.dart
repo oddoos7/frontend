@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
+import 'theme/theme.dart';
+import 'routes/app_router.dart';
+import 'routes/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Location Store Viewer',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
-        useMaterial3: true,
-      ),
-      home: const HomeScreen(),
+      title: '앱 만들기',
+      theme: AppTheme.lightTheme,
+      initialRoute: AppRoutes.home,
+      onGenerateRoute: AppRouter.generateRoute,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
