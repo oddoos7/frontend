@@ -1,16 +1,8 @@
-# flutter_develop
+# 창의설계프로젝트
 
-A new Flutter project.
+메뉴 서비스, 위치 서비스, 리뷰 서비스 구현현
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+기본적인 각 서비스 별로 화면을 구성하였으며,
+향후, db 연동하여 완성 예정입니다.
