@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import '../routes/app_routes.dart';
-import 'menu_screen.dart';
-import 'location_screen.dart';
-import 'review_screen.dart';
+import '../screens/menu_screen.dart';
+import '../screens/location_screen.dart';
+import '../screens/review_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,11 +13,16 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
-  final List<Widget> _screens = [
-    Center(child: Text("홈 화면")), // 향후 배너, 프로모션 추가 가능
-    const MenuScreen(),
-    const LocationScreen(),
-    const ReviewScreen(),
+  static const List<String> _titles = [
+    '메뉴',
+    '위치',
+    '리뷰',
+  ];
+
+  static const List<Widget> _screens = [
+    MenuScreen(),
+    LocationScreen(),
+    ReviewScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -30,28 +34,27 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(_titles[_selectedIndex]),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
+        elevation: 2,
+      ),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: Theme.of(context).colorScheme.primary,
-        unselectedItemColor: Colors.grey,
-        type: BottomNavigationBarType.fixed,
         items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '홈',
-          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.restaurant_menu),
             label: '메뉴',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.place),
-            label: '가게찾기',
+            icon: Icon(Icons.location_on),
+            label: '위치',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.rate_review),
+            icon: Icon(Icons.reviews),
             label: '리뷰',
           ),
         ],

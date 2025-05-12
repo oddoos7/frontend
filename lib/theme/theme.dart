@@ -5,9 +5,9 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       colorScheme: const ColorScheme.light(
-        primary: Color(0xFF02C7A3), // 배민 민트톤
-        secondary: Color(0xFF222222), // 텍스트용 진한 회색
-        background: Color(0xFFF9F9F9), // 밝은 배경
+        primary: Color.fromARGB(255, 124, 231, 35),
+        secondary: Color(0xFF222222),
+        background: Color(0xFFF9F9F9),
       ),
       scaffoldBackgroundColor: const Color(0xFFF9F9F9),
       appBarTheme: const AppBarTheme(
